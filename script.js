@@ -37,13 +37,18 @@ function createSnowflake() {
     document.head.appendChild(style);
 }
 
+
 // Start button click event
 document.getElementById('startButton').addEventListener('click', function() {
     gsap.to('.message', { opacity: 0, duration: 1, onComplete: () => {
         document.querySelector('.message').style.display = 'none';  // Hide message
         createSnowflakes();  // Create falling snowflakes
+
+        // Show the 'christmasSurprise' container (remove 'hidden' class)
+        document.getElementById('christmasSurprise').classList.remove('hidden');
     }});
 });
+
 
 // Generate snowflakes at intervals
 function createSnowflakes() {

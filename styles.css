@@ -1,4 +1,4 @@
-/* styles.css */
+/* General reset and box model */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #003366; /* Christmas night sky */
+    background-image: url('background.png');
     text-align: center;
     color: white;
     overflow: hidden;
@@ -63,7 +63,7 @@ button:hover {
     pointer-events: none;
 }
 
-.star {
+/* .star {
     position: absolute;
     top: 10%;
     left: 50%;
@@ -73,7 +73,7 @@ button:hover {
     background-color: yellow;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     animation: twinkle 2s infinite alternate;
-}
+} */
 
 @keyframes twinkle {
     0% {
@@ -98,4 +98,28 @@ button:hover {
     button {
         font-size: 1em;
     }
+}
+
+/* Ensure the 'hidden' class hides the container */
+.hidden {
+    display: none;
+}
+
+/* Center the christmas-surprise container */
+#christmasSurprise {
+    position: fixed;  /* Position it relative to the viewport */
+    top: 50%;         /* Position it vertically in the middle */
+    left: 50%;        /* Position it horizontally in the middle */
+    transform: translate(-50%, -50%);  /* Adjust for perfect centering */
+    text-align: center;
+    margin-top: 0;    /* Remove any margin-top */
+    z-index: 10;      /* Make sure the image appears above other elements */
+}
+
+/* Style the image to make it responsive and centered */
+#christmasSurprise img {
+    width: 80%;         /* Adjust size (80% of the screen width) */
+    max-width: 600px;   /* Set a max width for the image */
+    border-radius: 10px;
+    border: 5px solid white;
 }

@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Christmas Card</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure the 'hidden' class hides the container */
+        .hidden {
+            display: none;
+        }
+
+        /* Center the christmas-surprise container */
+        #christmasSurprise {
+            position: fixed;  /* Position it relative to the viewport */
+            top: 50%;         /* Position it vertically in the middle */
+            left: 50%;        /* Position it horizontally in the middle */
+            transform: translate(-50%, -50%);  /* Adjust for perfect centering */
+            text-align: center;
+            margin-top: 0;    /* Remove any margin-top */
+            z-index: 10;      /* Make sure the image appears above other elements */
+        }
+
+        /* Style the image to make it responsive and centered */
+        #christmasSurprise img {
+            width: 80%;         /* Adjust size (80% of the screen width) */
+            max-width: 600px;   /* Set a max width for the image */
+            border-radius: 10px;
+            border: 5px solid white;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -19,6 +44,11 @@
         </div>
         
         <div class="star"></div>
+    </div>
+    
+    <!-- Initially hidden 'christmasSurprise' container -->
+    <div id="christmasSurprise" class="surprise hidden">
+        <img src="rj.png" alt="Christmas Surprise" />
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
